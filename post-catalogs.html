@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#6898f8">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f0f0f">
+    <title>پنل ادمین - فلیکس مووی</title>
+
+
+    <link rel="icon" href="assest/logo/film.ico"> <!-- Favicon -->
+
+    <!-- fontawesome -->
+    <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body class="panel">
+    <!-- scripts -->
+    <script>
+        // loader animation
+        window.addEventListener("load", function () {
+            document.querySelector('.loader-parent').classList.add('loaded');
+            setTimeout(function () {
+                document.querySelector('.loader-parent').remove();
+            }, 3000)
+        });
+    </script>
+
+    <!--  loader 3  -->
+    <div class="loader-parent loader3">
+        <div class="loader-film-strip">
+            <div class="loader-strip-inner">
+                <div class="loader-film-strip-inner"></div>
+                <div class="loader-film-strip-inner inner-2"></div>
+                <div class="loader-film-strip-inner inner-3"></div>
+                <div class="loader-film-strip-inner inner-4"></div>
+            </div>
+        </div>
+        <p class="loader-text">در حال بارگزاری</p>
+    </div>
+    <!--Loader animation end-- >
+ < !-- --------------- -->
+
+    <!-- reloading animation -->
+    <div class="sendSucceseFullAnimation">
+        <div class="square__cr">
+            <div class="square __sq1"></div>
+            <div class="square __sq2"></div>
+            <div class="square __sq3"></div>
+        </div>
+        <div class="square__cr">
+            <div class="square __sq4"></div>
+            <div class="square __sq5"></div>
+            <div class="square __sq6"></div>
+        </div>
+        <div class="square__cr">
+            <div class="square __sq7"></div>
+            <div class="square __sq8"></div>
+            <div class="square __sq9"></div>
+        </div>
+    </div>
+    <!-- reloading animation -->
+
+    <main class="panel__main__container container">
+        <div class="sidebar">
+            <header class="panel__left__logo">
+                <div class="panel__logo">
+                    <a title="صفحه اصلی" class="panel__link" href="Panel.html">
+                        <img loading="lazy" class="panel-logo" src="assest/logo/mobile-navigation-icon.svg" alt="">
+                        <p>Flix Movie</p>
+                    </a>
+                </div>
+            </header>
+
+            <!--sidebar menu section -->
+            <menu class="sidebar__menu">
+                <div class="admin__info">
+                    <div class="admin__name">
+                        <i class="admin__i" href="javascript:void(0)">
+                            <svg version="1.1" viewBox="0 0 512 512">
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M256,0c-62.737,0-113.778,54.223-113.778,120.872S193.263,241.744,256,241.744s113.778-54.223,113.778-120.872    S318.737,0,256,0z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M256,269.786c-116.131,0-210.61,94.479-210.61,210.61V512h421.22v-31.603C466.61,364.266,372.131,269.786,256,269.786z">
+                                            </path>
+                                        </g>
+                            </svg>
+                        </i>
+                        <div class="admin__info__text">
+                            <p>مدیر</p>
+                            <h1>مهدی رستمی</h1>
+                        </div>
+                    </div>
+                    <div class="admin__icon">
+                        <a title="خروج از حساب" class="admin__i logout__panel" href="#">
+                            <svg viewBox="0 0 8.4666665 8.4666669">
+                                <g
+                                    transform="matrix(-1,1.2246467991473532e-16,-1.2246467991473532e-16,-1,8.480324864387512,8.479461669921875)">
+                                    <g transform="translate(0 -288.533)">
+                                        <path id="path823"
+                                            d="m4.234375 1.0078125c-1.6722069-.12069523-3.2304688 1.2172994-3.2304688 2.984375v24.0078125c0 1.678299 1.4046987 3.050065 3.0859376 2.996094.0025998.00001.0052126.00001.0078124 0 .2860574-.01134.5754716-.06094.8554688-.154297l5.994141-2.001953c1.218702-.40664 2.052734-1.550295 2.052734-2.841797v-3.003906h-.996094c-2.7265279.000378-5.0062322-2.279346-5.0058591-5.00586v-3.992187c-.0003731-2.726551 2.2793312-4.9984251 5.0058591-4.9980471h.996094v-2.9960938c0-1.2914645-.832637-2.4425544-2.052734-2.8496093l-5.994141-2.0019532c-.2393558-.0798661-.4798633-.1253359-.71875-.1425781zm16.001953 6.0136719c-.540083-.0304772-1.080656.0902104-1.560547.3300781-.959781.4798866-1.683594 1.4367955-1.683593 2.6425781v1.0039064h-4.988282c-1.645282 0-3.0058591 1.352743-3.0058591 2.998047v3.992187c0 1.645266 1.3605771 3.00586 3.0058591 3.00586h4.988282v.996093c0 2.411528 2.877345 3.853242 4.80664 2.40625l8.001953-6.001953c.777762-.583332 1.223087-1.508903 1.195313-2.480469-.026041-.910941-.463401-1.767505-1.195313-2.316406l-8.001953-6.0019529c-.482316-.3617386-1.022417-.5437416-1.5625-.5742187z"
+                                            transform="matrix(.265 0 0 .265 0 288.533)"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <nav class="actions">
+                    <ul class="admin__actions">
+                        <li>
+                            <a class="admin__actions__link" href="Panel.html">
+                                <svg version="1.1" viewBox="0 0 512 512">
+                                    <g>
+                                        <path
+                                            d="m498.195312 222.695312c-.011718-.011718-.023437-.023437-.035156-.035156l-208.855468-208.847656c-8.902344-8.90625-20.738282-13.8125-33.328126-13.8125-12.589843 0-24.425781 4.902344-33.332031 13.808594l-208.746093 208.742187c-.070313.070313-.140626.144531-.210938.214844-18.28125 18.386719-18.25 48.21875.089844 66.558594 8.378906 8.382812 19.445312 13.238281 31.277344 13.746093.480468.046876.964843.070313 1.453124.070313h8.324219v153.699219c0 30.414062 24.746094 55.160156 55.167969 55.160156h81.710938c8.28125 0 15-6.714844 15-15v-120.5c0-13.878906 11.289062-25.167969 25.167968-25.167969h48.195313c13.878906 0 25.167969 11.289063 25.167969 25.167969v120.5c0 8.285156 6.714843 15 15 15h81.710937c30.421875 0 55.167969-24.746094 55.167969-55.160156v-153.699219h7.71875c12.585937 0 24.421875-4.902344 33.332031-13.808594 18.359375-18.371093 18.367187-48.253906.023437-66.636719zm0 0">
+                                        </path>
+                                    </g>
+                                </svg>
+                                <p>داشبورد</p>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="admin__actions__link" href="post-catalogs.html">
+                                <svg version="1.1" viewBox="0 0 24 24">
+                                    <g>
+                                        <g>
+                                            <path d="m4 3a1 1 0 0 0 -1 1v7h8v-8z"></path>
+                                            <path d="m20 3h-7v8h8v-7a1 1 0 0 0 -1-1zm-1 6h-4v-4h4z"></path>
+                                            <path d="m9 13h-6v7a1 1 0 0 0 1 1h7v-8zm0 6h-4v-4h4z"></path>
+                                            <path d="m13 13v8h7a1 1 0 0 0 1-1v-7z"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p>کاتالوگ پست ها</p>
+                                <!-- حذف پست -->
+                                <!-- ویرایش پست -->
+                                <!-- مشاهده پست -->
+                                <!-- قفل کردن پست -->
+                            </a>
+                        </li>
+
+                        <li data-dropdown-panel="true">
+                            <a class="admin__actions__link" href="javascript:void(0)">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 474.565 474.565">
+                                    <g>
+                                        <g xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M255.204,102.3c-0.606-11.321-12.176-9.395-23.465-9.395C240.078,95.126,247.967,98.216,255.204,102.3z">
+                                            </path>
+                                            <path
+                                                d="M134.524,73.928c-43.825,0-63.997,55.471-28.963,83.37c11.943-31.89,35.718-54.788,66.886-63.826   C163.921,81.685,150.146,73.928,134.524,73.928z">
+                                            </path>
+                                            <path
+                                                d="M43.987,148.617c1.786,5.731,4.1,11.229,6.849,16.438L36.44,179.459c-3.866,3.866-3.866,10.141,0,14.015l25.375,25.383   c1.848,1.848,4.38,2.888,7.019,2.888c2.61,0,5.125-1.04,7.005-2.888l14.38-14.404c2.158,1.142,4.55,1.842,6.785,2.827   c0-0.164-0.016-0.334-0.016-0.498c0-11.771,1.352-22.875,3.759-33.302c-17.362-11.174-28.947-30.57-28.947-52.715   c0-34.592,28.139-62.739,62.723-62.739c23.418,0,43.637,13.037,54.43,32.084c11.523-1.429,22.347-1.429,35.376,1.033   c-1.676-5.07-3.648-10.032-6.118-14.683l14.396-14.411c1.878-1.856,2.918-4.38,2.918-7.004c0-2.625-1.04-5.148-2.918-7.004   l-25.361-25.367c-1.94-1.941-4.472-2.904-7.003-2.904c-2.532,0-5.063,0.963-6.989,2.904l-14.442,14.411   c-5.217-2.764-10.699-5.078-16.444-6.825V9.9c0-5.466-4.411-9.9-9.893-9.9h-35.888c-5.451,0-9.909,4.434-9.909,9.9v20.359   c-5.73,1.747-11.213,4.061-16.446,6.825L75.839,22.689c-1.942-1.941-4.473-2.904-7.005-2.904c-2.531,0-5.077,0.963-7.003,2.896   L36.44,48.048c-1.848,1.864-2.888,4.379-2.888,7.012c0,2.632,1.04,5.148,2.888,7.004l14.396,14.403   c-2.75,5.218-5.063,10.708-6.817,16.438H23.675c-5.482,0-9.909,4.441-9.909,9.915v35.889c0,5.458,4.427,9.908,9.909,9.908H43.987z">
+                                            </path>
+                                            <path
+                                                d="M354.871,340.654c15.872-8.705,26.773-25.367,26.773-44.703c0-28.217-22.967-51.168-51.184-51.168   c-9.923,0-19.118,2.966-26.975,7.873c-4.705,18.728-12.113,36.642-21.803,52.202C309.152,310.022,334.357,322.531,354.871,340.654z   ">
+                                            </path>
+                                            <path
+                                                d="M460.782,276.588c0-5.909-4.799-10.693-10.685-10.693H428.14c-1.896-6.189-4.411-12.121-7.393-17.75l15.544-15.544   c2.02-2.004,3.137-4.721,3.137-7.555c0-2.835-1.118-5.553-3.137-7.563l-27.363-27.371c-2.08-2.09-4.829-3.138-7.561-3.138   c-2.734,0-5.467,1.048-7.547,3.138l-15.576,15.552c-5.623-2.982-11.539-5.481-17.751-7.369v-21.958   c0-5.901-4.768-10.685-10.669-10.685H311.11c-2.594,0-4.877,1.04-6.739,2.578c3.26,11.895,5.046,24.793,5.046,38.552   c0,8.735-0.682,17.604-1.956,26.423c7.205-2.656,14.876-4.324,22.999-4.324c36.99,0,67.086,30.089,67.086,67.07   c0,23.637-12.345,44.353-30.872,56.303c13.48,14.784,24.195,32.324,31.168,51.976c1.148,0.396,2.344,0.684,3.54,0.684   c2.733,0,5.467-1.04,7.563-3.13l27.379-27.371c2.004-2.004,3.106-4.721,3.106-7.555s-1.102-5.551-3.106-7.563l-15.576-15.552   c2.982-5.621,5.497-11.555,7.393-17.75h21.957c2.826,0,5.575-1.118,7.563-3.138c2.004-1.996,3.138-4.72,3.138-7.555   L460.782,276.588z">
+                                            </path>
+                                            <path
+                                                d="M376.038,413.906c-16.602-48.848-60.471-82.445-111.113-87.018c-16.958,17.958-37.954,29.351-61.731,29.351   c-23.759,0-44.771-11.392-61.713-29.351c-50.672,4.573-94.543,38.17-111.145,87.026l-9.177,27.013   c-2.625,7.773-1.368,16.338,3.416,23.007c4.783,6.671,12.486,10.631,20.685,10.631h315.853c8.215,0,15.918-3.96,20.702-10.631   c4.767-6.669,6.041-15.234,3.4-23.007L376.038,413.906z">
+                                            </path>
+                                            <path
+                                                d="M120.842,206.782c0,60.589,36.883,125.603,82.352,125.603c45.487,0,82.368-65.014,82.368-125.603   C285.563,81.188,120.842,80.939,120.842,206.782z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p>اقدامات ادمین</p>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                        </li>
+                        <ul class="admin__pages__action" data-dropdown-panel-hidden="true">
+                            <li><a href="addPost.html">افزودن پست</a></li>
+                            <li><a href="addArticle.html">افزودن مقاله</a></li>
+                            <li><a href="create-user.html">ساخت کاربر جدید</a></li>
+                            <li><a href="created-users.html">کاربران ساخته شده</a></li>
+                            <li><a href="socials.html">شبکه های اجتماعی</a></li>
+                        </ul>
+
+                        <li>
+                            <a class="admin__actions__link" href="panel-comments.html">
+                                <svg version="1.1" viewBox="0 0 512 512">
+                                    <g>
+                                        <path
+                                            d="m303.392 61.393c-31.795-19.61-69.472-30.393-108.392-30.393-105.946 0-195 78.933-195 180 0 35.435 11.008 69.404 31.918 98.741l-29.21 91.706c-3.086 9.687 4.17 19.553 14.295 19.553 2.315 0 4.645-.535 6.795-1.629l88.832-45.167c3.597 1.549 7.239 2.99 10.918 4.328-20.567-32.102-31.548-68.952-31.548-107.532 0-114.897 96.678-203.228 211.392-209.607z">
+                                        </path>
+                                        <path
+                                            d="m480.082 369.741c20.91-29.337 31.918-63.306 31.918-98.741 0-101.104-89.092-180-195-180-105.946 0-195 78.933-195 180 0 101.104 89.092 180 195 180 28.417 0 56.732-5.791 82.365-16.798l88.837 45.169c5.391 2.741 11.903 1.976 16.512-1.941s6.415-10.219 4.579-15.982zm-224.082-83.741c-8.284 0-15-6.716-15-15s6.716-15 15-15 15 6.716 15 15-6.716 15-15 15zm60 0c-8.284 0-15-6.716-15-15s6.716-15 15-15 15 6.716 15 15-6.716 15-15 15zm60 0c-8.284 0-15-6.716-15-15s6.716-15 15-15 15 6.716 15 15-6.716 15-15 15z">
+                                        </path>
+                                    </g>
+                                </svg>
+                                <p>نظرات</p>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="admin__actions__link" href="scores.html">
+                                <svg version="1.1" viewBox="0 0 24 24">
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="m12 2a10 10 0 1 0 10 10 10 10 0 0 0 -10-10zm5.68 9.54-2.13 2.18.5 3.1a1 1 0 0 1 -.41 1 1 1 0 0 1 -1.06.05l-2.58-1.45-2.6 1.43a.94.94 0 0 1 -.48.13 1 1 0 0 1 -.58-.18 1 1 0 0 1 -.41-1l.51-3.1-2.14-2.16a1 1 0 0 1 .57-1.69l2.91-.45 1.31-2.78a1 1 0 0 1 .91-.62 1 1 0 0 1 .91.57l1.3 2.83 2.91.45a1 1 0 0 1 .8.67 1 1 0 0 1 -.24 1.02z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p>امتیازات</p>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="admin__actions__link" href="../index.html">
+                                <svg version="1.1" viewBox="0 0 512 512">
+                                    <g>
+                                        <path
+                                            d="m100 0h312a100.193 100.193 0 0 1 100 100v312a100.193 100.193 0 0 1 -100 100h-312a100.193 100.193 0 0 1 -100-100v-312a100.193 100.193 0 0 1 100-100zm287.244 237.263h-155.82l48.614-48.586a18.761 18.761 0 0 0 -26.533-26.532l-80.588 80.617a18.75 18.75 0 0 0 0 26.533l80.588 80.589a18.751 18.751 0 0 0 26.533-26.5l-48.614-48.586h155.82a18.766 18.766 0 0 0 0-37.531zm-281.225 84.388a18.737 18.737 0 1 0 37.474 0v-131.273a18.737 18.737 0 0 0 -37.474 0z">
+                                        </path>
+                                    </g>
+                                </svg>
+                                <p>بازگشت به صفحه اصلی</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <span class="panel__copy__right__text">&copy; پنل ادمین فلیکس مووی</span>
+            </menu>
+            <!--sidebar menu section end -->
+        </div>
+
+        <!-- main panel container -->
+        <section class="main__panel__section">
+            <!-- panel header start -->
+            <header class="main__panel__header ">
+                <!-- menu panel header fixed -->
+                <div class="mobile__panel__header">
+                    <div class="mobile__panel__logo ">
+                        <a href="Panel.html">
+                            <img loading="lazy" clsas="panel-logo" src="assest/logo/mobile-navigation-icon.svg"
+                                alt="">
+                        </a>
+                    </div>
+                    <button id="openPanelNav" class="OpenPanelNavbar" role="button">
+                        <div class="panel-bar"></div>
+                        <div class="panel-bar"></div>
+                        <div class="panel-bar"></div>
+                    </button>
+                </div>
+                <!-- menu panel header fixed end-->
+
+                <!-- panel page title -->
+                <div class="panel__page__title panel-page-other-title">
+                    <h1>کاتالوگ
+                        <p>تعداد ۳۶۴</p>
+                    </h1>
+                    <div class="panel-header-left-aside">
+                        <div class="sort-panel-table">
+                            <p>مرتب سازی براساس :</p>
+                            <div class="sort-lists-button">
+                                <p class="sort-list-title">تاریخ ایجاد شده</p>
+                                <div class="sort-list-bar">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <ul class="sort__table__lists">
+                                    <li id="createTime">تاریخ ایجاد شده</li>
+                                    <li id="filmScore">رتبه</li>
+                                    <li id="Views">بازدید</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="panel-search-form-container">
+                            <form id="panel-search-form" class="panel-search-form-cr" name="panel-search-form"
+                                action="#" method="GET">
+
+                                <input spellcheck="false" id="panel-serach-box" name="panel-serach-box" type="search"
+                                    placeholder="جستجو برای...">
+                                <svg class="magni-icon" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    viewBox="0 0 512 512">
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="M331.324,0c-99.591,0-180.613,81.022-180.613,180.613c0,32.918,8.857,63.804,24.306,90.409L13.718,432.321    c-18.204,18.203-18.204,47.823,0,66.026C22.819,507.449,34.775,512,46.73,512c11.955,0,23.912-4.55,33.012-13.653l161.332-161.333    c26.569,15.391,57.397,24.211,90.248,24.211c99.591,0,180.613-81.023,180.613-180.613S430.915,0,331.324,0z M58.51,477.114    c-6.496,6.496-17.064,6.496-23.559,0.001c-6.495-6.495-6.495-17.064,0-23.56l10.125-10.125l23.559,23.559L58.51,477.114z     M89.868,445.757l-23.559-23.559l16.263-16.263l23.559,23.56L89.868,445.757z M127.363,408.261l-23.559-23.56l88.69-88.69    c7.12,8.551,15.012,16.438,23.57,23.549L127.363,408.261z M331.324,331.197c-83.033,0-150.584-67.552-150.584-150.584    S248.291,30.029,331.324,30.029S481.908,97.58,481.908,180.613S414.357,331.197,331.324,331.197z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="M410.908,163.716c-8.292,0-15.014,6.722-15.014,15.014v65.244c0,8.292,6.722,15.014,15.014,15.014    s15.014-6.722,15.014-15.014V178.73C425.922,170.437,419.199,163.716,410.908,163.716z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="M361.226,96.676c-8.292,0-15.014,6.722-15.014,15.014v132.283c0,8.292,6.722,15.014,15.014,15.014    s15.014-6.722,15.014-15.014V111.69C376.241,103.398,369.518,96.676,361.226,96.676z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="M310.847,130.196c-8.292,0-15.014,6.722-15.014,15.014v99.661c0,8.292,6.722,15.014,15.014,15.014    s15.014-6.722,15.014-15.014V145.21C325.862,136.918,319.139,130.196,310.847,130.196z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="M258.327,97.574c-8.292,0-15.014,6.722-15.014,15.014v132.283c0,8.292,6.722,15.014,15.014,15.014    s15.014-6.722,15.014-15.014V112.588C273.342,104.296,266.619,97.574,258.327,97.574z">
+                                                </path>
+                                            </g>
+                                        </g>
+
+                                    </g>
+                                </svg>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- panel page title end-->
+            </header>
+            <!-- pange header end -->
+
+            <!-- website analytics tables -->
+            <section class="website-analytics-last-cr">
+                <!-- start -->
+                <div class="analytics-container panel-other-page">
+                    <div class="analytics-table">
+                        <div class="analytics-tr">
+
+                            <!-- post id -->
+                            <ul class="analytics-table-container-tr">
+                                <h3 class="analytics-table-th">شناسه</h3>
+                                <li>۱۲</li>
+                                <li>۶۳</li>
+                                <li>۲۵</li>
+                                <li>۱۶۹</li>
+                                <li>۱۶۹</li>
+                                <li>۶۹</li>
+                                <li>۲۶۹</li>
+                                <li>۶۳۴</li>
+                                <li>۲۶۳</li>
+                                <li>۱۴۴۰</li>
+                                <li>۱۲</li>
+                                <li>۴۱</li>
+                            </ul>
+                            <!-- post id -->
+
+                            <!-- post title -->
+                            <ul class="analytics-table-container-tr">
+                                <h3 class="analytics-table-th">عنوان</h3>
+                                <li> <a href="#" class="analytics-table-link">سریال بازی مرکب</a></li>
+                                <li><a href="#" class="analytics-table-link">فیلم ونوم ۲۰۲۱</a></li>
+                                <li> <a href="#" class="analytics-table-link">فیلم بتمن</a></li>
+                                <li><a href="#" class="analytics-table-link">سریال مستر ربات</a></li>
+                                <li><a href="#" class="analytics-table-link">تاریخ اکران فیلم Kate</a></li>
+                                <li><a href="#" class="analytics-table-link">سریال بنیش</a></li>
+                                <li><a href="#" class="analytics-table-link">سریال نیسان آبی</a></li>
+                                <li><a href="#" class="analytics-table-link">آموزش کار با KmPlayer</a></li>
+                                <li><a href="#" class="analytics-table-link">فیلم جوکر علیه بتمن</a></li>
+                                <li><a href="#" class="analytics-table-link">برترین فیلم NetFlix</a></li>
+                                <li><a href="#" class="analytics-table-link">سریال نارگیل</a></li>
+                                <li><a href="#" class="analytics-table-link">فیلم جوکر ۲۰۲۱</a></li>
+                            </ul>
+                            <!-- post title -->
+
+                            <!-- post tag -->
+                            <ul class="analytics-table-container-tr">
+                                <h3 class="analytics-table-th">دسته بندی</h3>
+                                <li>سریال , درام , اکشن</li>
+                                <li>فیلم , اکشن و ترسناک</li>
+                                <li>فیلم , اکشن</li>
+                                <li>سریال , هکری , سایبری</li>
+                                <li>فیلم , اکشن</li>
+                                <li>سریال , اکشن</li>
+                                <li>سریال , کمدی , ایرانی</li>
+                                <li>آموزش , مقاله</li>
+                                <li>اکشن , درام , جدید</li>
+                                <li>مقاله , نقد و بررسی</li>
+                                <li>سریال , ایرانی</li>
+                                <li>اکشن , درام</li>
+                            </ul>
+                            <!-- post tag -->
+
+                            <!-- post views -->
+                            <ul class="analytics-table-container-tr">
+                                <h3 class="analytics-table-th">بازدید ها</h3>
+                                <li>
+                                    <span>۱۲۶۳</span><i class="fa fa-eye"></i>
+                                </li>
+                                <li>
+                                    <span>۶۳۹</span><i class="fa fa-eye"></i>
+                                </li>
+                                <li>
+                                    <span>۶۳۹۶</span><i class="fa fa-eye"></i>
+                                </li>
+                                <li>
+                                    <span>۵۲۹</span><i class="fa fa-eye"></i>
+                                </li>
+                                <li>
+                                    <span>۰</span><i class="fa fa-eye"></i>
+
+                                </li>
+                                <li>
+                                    <span>۲۵۰</span><i class="fa fa-eye"></i>
+                                </li>
+                                <li>
+                                    <span>۹۶۳</span><i class="fa fa-eye"></i>
+                                </li>
+                                <li>
+                                    <span>۱۴۰۰</span><i class="fa fa-eye"></i>
+                                </li>
+                                <li>
+                                    <span>۰</span><i class="fa fa-eye"></i>
+                                </li>
+                                <li>
+                                    <span>۰</span><i class="fa fa-eye"></i>
+                                </li>
+                                <li>
+                                    <span>۹۶۸۵</span><i class="fa fa-eye"></i>
+                                </li>
+                                <li>
+                                    <span>۰</span><i class="fa fa-eye"></i>
+                                </li>
+                            </ul>
+                            <!-- post views -->
+
+                            <!-- post date -->
+                            <ul class="analytics-table-container-tr">
+                                <h3 class="analytics-table-th">تاریخ ایجاد شده</h3>
+                                <li>۳۰ / ۱۰ / ۱۴۰۰</li>
+                                <li>۱۴ / ۱۰ / ۱۴۰۰</li>
+                                <li>۲۲ / ۱۰ / ۱۴۰۰</li>
+                                <li>۲۹ / ۱۰ / ۱۴۰۰</li>
+                                <li>۱۲ / ۱۰ / ۱۴۰۰</li>
+                                <li>۰۲ / ۰۹ / ۱۴۰۰</li>
+                                <li>۰۸ / ۱۰ / ۱۴۰۰</li>
+                                <li>۰۳ / ۱۰ / ۱۴۰۰</li>
+                                <li>۱۳ / ۱۲ / ۱۴۰۰</li>
+                                <li>۲۶ / ۱۲ / ۱۴۰۰</li>
+                                <li>۰۵ / ۱۲ / ۱۴۰۰</li>
+                                <li>۲۸ / ۱۲ / ۱۴۰۰</li>
+                            </ul>
+                            <!-- post date -->
+
+                            <!-- post condition -->
+                            <ul class="analytics-table-container-tr">
+                                <h3 class="analytics-table-th">وضعیت</h3>
+                                <li class="panel-green-class">انتشار یافته</li>
+                                <li class="panel-green-class">انتشار یافته</li>
+                                <li class="panel-green-class">انتشار یافته</li>
+                                <li class="panel-green-class">انتشار یافته</li>
+                                <li class="panel-red-class">پیش نویس</li>
+                                <li class="panel-green-class">انتشار یافته</li>
+                                <li class="panel-green-class">انتشار یافته</li>
+                                <li class="panel-green-class">انتشار یافته</li>
+                                <li class="panel-red-class">پیش نویس</li>
+                                <li class="panel-red-class">پیش نویس</li>
+                                <li class="panel-green-class">انتشار یافته</li>
+                                <li class="panel-red-class">پیش نویس</li>
+                            </ul>
+                            <!-- post condition -->
+
+                            <!-- admin actions buttons -->
+                            <ul class="analytics-table-container-tr">
+                                <h3 class="analytics-table-th">اقدامات</h3>
+                                <li class="admin__post__actions">
+                                    <a href="#post-status" data-action-icon-1 data-lock-button-text="قفل کردن پست"
+                                        data-lock-button>
+                                        <i class="material-icons">
+                                            enhanced_encryption
+                                        </i>
+                                    </a>
+                                    <a target="_blank" href="../squidgame.html" data-action-icon-2
+                                        data-view-post="مشاهده پست" data-view-button>
+                                        <i class="material-icons">
+                                            remove_red_eye
+                                        </i>
+                                    </a>
+                                    <a href="#" data-edit-post="ویرایش پست" data-action-icon-2 data-edit-button>
+                                        <i class="material-icons">
+                                            drive_file_rename_outline
+                                        </i>
+                                    </a>
+                                    <a href="#delete-post" data-action-icon-4 data-delete-text="حذف پست"
+                                        data-delete-button>
+                                        <i class="material-icons">
+                                            delete_forever
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="admin__post__actions">
+                                    <a href="#post-status" data-action-icon-1 data-lock-button-text="قفل کردن پست"
+                                        data-lock-button>
+                                        <i class="material-icons">
+                                            enhanced_encryption
+                                        </i>
+                                    </a>
+                                    <a target="_blank" href="../squidgame.html" data-action-icon-2
+                                        data-view-post="مشاهده پست" data-view-button>
+                                        <i class="material-icons">
+                                            remove_red_eye
+                                        </i>
+                                    </a>
+                                    <a href="#" data-edit-post="ویرایش پست" data-action-icon-2 data-edit-button>
+                                        <i class="material-icons">
+                                            drive_file_rename_outline
+                                        </i>
+                                    </a>
+                                    <a href="#delete-post" data-action-icon-4 data-delete-text="حذف پست"
+                                        data-delete-button>
+                                        <i class="material-icons">
+                                            delete_forever
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="admin__post__actions">
+                                    <a href="#post-status" data-action-icon-1 data-lock-button-text="قفل کردن پست"
+                                        data-lock-button>
+                                        <i class="material-icons">
+                                            enhanced_encryption
+                                        </i>
+                                    </a>
+                                    <a target="_blank" href="../squidgame.html" data-action-icon-2
+                                        data-view-post="مشاهده پست" data-view-button>
+                                        <i class="material-icons">
+                                            remove_red_eye
+                                        </i>
+                                    </a>
+                                    <a href="#" data-edit-post="ویرایش پست" data-action-icon-2 data-edit-button>
+                                        <i class="material-icons">
+                                            drive_file_rename_outline
+                                        </i>
+                                    </a>
+                                    <a href="#delete-post" data-action-icon-4 data-delete-text="حذف پست"
+                                        data-delete-button>
+                                        <i class="material-icons">
+                                            delete_forever
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="admin__post__actions">
+                                    <a href="#post-status" data-action-icon-1 data-lock-button-text="قفل کردن پست"
+                                        data-lock-button>
+                                        <i class="material-icons">
+                                            enhanced_encryption
+                                        </i>
+                                    </a>
+                                    <a target="_blank" href="../squidgame.html" data-action-icon-2
+                                        data-view-post="مشاهده پست" data-view-button>
+                                        <i class="material-icons">
+                                            remove_red_eye
+                                        </i>
+                                    </a>
+                                    <a href="#" data-edit-post="ویرایش پست" data-action-icon-2 data-edit-button>
+                                        <i class="material-icons">
+                                            drive_file_rename_outline
+                                        </i>
+                                    </a>
+                                    <a href="#delete-post" data-action-icon-4 data-delete-text="حذف پست"
+                                        data-delete-button>
+                                        <i class="material-icons">
+                                            delete_forever
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="admin__post__actions">
+                                    <a href="#post-status" data-action-icon-1 data-lock-button-text="قفل کردن پست"
+                                        data-lock-button>
+                                        <i class="material-icons">
+                                            enhanced_encryption
+                                        </i>
+                                    </a>
+                                    <a target="_blank" href="../squidgame.html" data-action-icon-2
+                                        data-view-post="مشاهده پست" data-view-button>
+                                        <i class="material-icons">
+                                            remove_red_eye
+                                        </i>
+                                    </a>
+                                    <a href="#" data-edit-post="ویرایش پست" data-action-icon-2 data-edit-button>
+                                        <i class="material-icons">
+                                            drive_file_rename_outline
+                                        </i>
+                                    </a>
+                                    <a href="#delete-post" data-action-icon-4 data-delete-text="حذف پست"
+                                        data-delete-button>
+                                        <i class="material-icons">
+                                            delete_forever
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="admin__post__actions">
+                                    <a href="#post-status" data-action-icon-1 data-lock-button-text="قفل کردن پست"
+                                        data-lock-button>
+                                        <i class="material-icons">
+                                            enhanced_encryption
+                                        </i>
+                                    </a>
+                                    <a target="_blank" href="../squidgame.html" data-action-icon-2
+                                        data-view-post="مشاهده پست" data-view-button>
+                                        <i class="material-icons">
+                                            remove_red_eye
+                                        </i>
+                                    </a>
+                                    <a href="#" data-edit-post="ویرایش پست" data-action-icon-2 data-edit-button>
+                                        <i class="material-icons">
+                                            drive_file_rename_outline
+                                        </i>
+                                    </a>
+                                    <a href="#delete-post" data-action-icon-4 data-delete-text="حذف پست"
+                                        data-delete-button>
+                                        <i class="material-icons">
+                                            delete_forever
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="admin__post__actions">
+                                    <a href="#post-status" data-action-icon-1 data-lock-button-text="قفل کردن پست"
+                                        data-lock-button>
+                                        <i class="material-icons">
+                                            enhanced_encryption
+                                        </i>
+                                    </a>
+                                    <a target="_blank" href="../squidgame.html" data-action-icon-2
+                                        data-view-post="مشاهده پست" data-view-button>
+                                        <i class="material-icons">
+                                            remove_red_eye
+                                        </i>
+                                    </a>
+                                    <a href="#" data-edit-post="ویرایش پست" data-action-icon-2 data-edit-button>
+                                        <i class="material-icons">
+                                            drive_file_rename_outline
+                                        </i>
+                                    </a>
+                                    <a href="#delete-post" data-action-icon-4 data-delete-text="حذف پست"
+                                        data-delete-button>
+                                        <i class="material-icons">
+                                            delete_forever
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="admin__post__actions">
+                                    <a href="#post-status" data-action-icon-1 data-lock-button-text="قفل کردن پست"
+                                        data-lock-button>
+                                        <i class="material-icons">
+                                            enhanced_encryption
+                                        </i>
+                                    </a>
+                                    <a target="_blank" href="../squidgame.html" data-action-icon-2
+                                        data-view-post="مشاهده پست" data-view-button>
+                                        <i class="material-icons">
+                                            remove_red_eye
+                                        </i>
+                                    </a>
+                                    <a href="#" data-edit-post="ویرایش پست" data-action-icon-2 data-edit-button>
+                                        <i class="material-icons">
+                                            drive_file_rename_outline
+                                        </i>
+                                    </a>
+                                    <a href="#delete-post" data-action-icon-4 data-delete-text="حذف پست"
+                                        data-delete-button>
+                                        <i class="material-icons">
+                                            delete_forever
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="admin__post__actions">
+                                    <a href="#post-status" data-action-icon-1 data-lock-button-text="قفل کردن پست"
+                                        data-lock-button>
+                                        <i class="material-icons">
+                                            enhanced_encryption
+                                        </i>
+                                    </a>
+                                    <a target="_blank" href="../squidgame.html" data-action-icon-2
+                                        data-view-post="مشاهده پست" data-view-button>
+                                        <i class="material-icons">
+                                            remove_red_eye
+                                        </i>
+                                    </a>
+                                    <a href="#" data-edit-post="ویرایش پست" data-action-icon-2 data-edit-button>
+                                        <i class="material-icons">
+                                            drive_file_rename_outline
+                                        </i>
+                                    </a>
+                                    <a href="#delete-post" data-action-icon-4 data-delete-text="حذف پست"
+                                        data-delete-button>
+                                        <i class="material-icons">
+                                            delete_forever
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="admin__post__actions">
+                                    <a href="#post-status" data-action-icon-1 data-lock-button-text="قفل کردن پست"
+                                        data-lock-button>
+                                        <i class="material-icons">
+                                            enhanced_encryption
+                                        </i>
+                                    </a>
+                                    <a target="_blank" href="../squidgame.html" data-action-icon-2
+                                        data-view-post="مشاهده پست" data-view-button>
+                                        <i class="material-icons">
+                                            remove_red_eye
+                                        </i>
+                                    </a>
+                                    <a href="#" data-edit-post="ویرایش پست" data-action-icon-2 data-edit-button>
+                                        <i class="material-icons">
+                                            drive_file_rename_outline
+                                        </i>
+                                    </a>
+                                    <a href="#delete-post" data-action-icon-4 data-delete-text="حذف پست"
+                                        data-delete-button>
+                                        <i class="material-icons">
+                                            delete_forever
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="admin__post__actions">
+                                    <a href="#post-status" data-action-icon-1 data-lock-button-text="قفل کردن پست"
+                                        data-lock-button>
+                                        <i class="material-icons">
+                                            enhanced_encryption
+                                        </i>
+                                    </a>
+                                    <a target="_blank" href="../squidgame.html" data-action-icon-2
+                                        data-view-post="مشاهده پست" data-view-button>
+                                        <i class="material-icons">
+                                            remove_red_eye
+                                        </i>
+                                    </a>
+                                    <a href="#" data-edit-post="ویرایش پست" data-action-icon-2 data-edit-button>
+                                        <i class="material-icons">
+                                            drive_file_rename_outline
+                                        </i>
+                                    </a>
+                                    <a href="#delete-post" data-action-icon-4 data-delete-text="حذف پست"
+                                        data-delete-button>
+                                        <i class="material-icons">
+                                            delete_forever
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="admin__post__actions">
+                                    <a href="#post-status" data-action-icon-1 data-lock-button-text="قفل کردن پست"
+                                        data-lock-button>
+                                        <i class="material-icons">
+                                            enhanced_encryption
+                                        </i>
+                                    </a>
+                                    <a target="_blank" href="../squidgame.html" data-action-icon-2
+                                        data-view-post="مشاهده پست" data-view-button>
+                                        <i class="material-icons">
+                                            remove_red_eye
+                                        </i>
+                                    </a>
+                                    <a href="#" data-edit-post="ویرایش پست" data-action-icon-2 data-edit-button>
+                                        <i class="material-icons">
+                                            drive_file_rename_outline
+                                        </i>
+                                    </a>
+                                    <a href="#delete-post" data-action-icon-4 data-delete-text="حذف پست"
+                                        data-delete-button>
+                                        <i class="material-icons">
+                                            delete_forever
+                                        </i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- admin actions buttons -->
+                        </div>
+                    </div>
+                </div>
+                <!-- panel paginations -->
+                <div class="panel__pagination">
+                    <p class="panel-page-count">۱ از ۳۶۴</p>
+                    <ul class="panel__pages">
+                        <li><a href="#"> <span class="material-icons">east</span></a></li>
+                        <li><a class="actived-panel-page" href="#">۱</a></li>
+                        <li><a href="#">۲</a></li>
+                        <li><a href="#">۳</a></li>
+                        <li><a href="#">۴</a></li>
+                        <li><a href="#">۵</a></li>
+                        <li><a href="#">۶</a></li>
+                        <li><a href="#">۷</a></li>
+                        <li><a href="#"><span class="material-icons">west</span></a></li>
+                    </ul>
+                </div>
+                <!-- panel paginations -->
+            </section>
+            <!-- website analytics tables end-->
+        </section>
+        <!-- menu panel container end -->
+    </main>
+    <!-- main page end -->
+
+    <!-- scripts -->
+    <script type="text/javascript" src="js/panel.js"></script>
+</body>
+
+</html>
